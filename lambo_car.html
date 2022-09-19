@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>moving_car</title>
+</head>
+<body>
+<h1>Move a Car</h1>
+<button type="button" onclick="moveRight()">Move Right</button>
+<button type="button" onclick="stop()">Stop</button>
+<img id="img" src="lambo.png">
+<script>
+function init()
+{
+imgObj = document.getElementById('img');
+imgObj.style.position = 'relative';
+imgObj.style.left = '0px';
+}
+function moveRight()
+{
+imgObj.style.left = parseInt(imgObj.style.left)+1+'px';
+animate = setTimeout('moveRight()',10);
+}
+function stop()
+{
+clearTimeout(animate);
+imgObj.style.left = '0px'
+}
+window.onload = init()
+</script>
+</body>
+</html>
